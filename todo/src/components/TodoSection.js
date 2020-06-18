@@ -8,6 +8,7 @@ import { initialState, reducer } from '../reducers/todoReducer';
 const TodoSection = () => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
+    console.log('Todosection state', state)
 
     const [formState, setFormState] = useState({
         item: ""
@@ -33,6 +34,7 @@ const TodoSection = () => {
                 <label style={{fontSize: "1rem"}}>
                     Add Your Todo Items:
                 <input 
+                    autoFocus
                     htmlFor="item"
                     type="text"
                     value={formState.item}
@@ -47,11 +49,11 @@ const TodoSection = () => {
     
         
         <div style={{width: "100%"}}>
-            <ul style={{width: "100%"}}>
+            <ul>
                 
                 {state.map(item => {
                     return(
-                        <li onClick={(() => dispatch({ type: 'CHANGE_STATUS'}))} key={item.id} style={{textAlign: "left"}}>{item.item}</li>
+                        <li onClick={(() => dispatch({ type: 'CHANGE_STATUS', payload: item.id}))} className={ item.completed ? "completed" : ""} key={item.id} style={{textAlign: "left"}}>{item.item}</li>
                     )
                 })}
             </ul>
