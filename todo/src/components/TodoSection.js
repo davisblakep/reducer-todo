@@ -24,6 +24,11 @@ const TodoSection = () => {
         setFormState({item: ""})
     };
 
+    const clearCompleted = (e) => {
+        e.preventDefault();
+        dispatch({ type: "CLEAR_COMPLETED"});
+    }
+
    
 
 
@@ -57,6 +62,7 @@ const TodoSection = () => {
                     )
                 })}
             </ul>
+            <button onClick={clearCompleted}>Clear Completed Items</button>
         </div>
         </div>
      ) }
