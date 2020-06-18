@@ -58,7 +58,7 @@ const TodoSection = () => {
                 
                 {state.map(item => {
                     return(
-                        <li onClick={(() => dispatch({ type: 'CHANGE_STATUS', payload: item.id}))} className={ item.completed ? "completed" : ""} key={item.id} style={{textAlign: "left"}}>{item.item}</li>
+                        <li onClick={(() => dispatch({ type: 'CHANGE_STATUS', payload: item.id}))} className={ item.completed ? "completed" : ""} key={item.id} style={{textAlign: "left", cursor: "pointer"}}>{item.item}</li>
                     )
                 })}
             </ul>
