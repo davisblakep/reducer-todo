@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import TodoSection from './components/TodoSection';
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +13,7 @@ function App() {
           Reducer Todo
         </p>
         <div className="todo-class">
-
+          <TodoSection />
         </div>
       </header>
     </div>
